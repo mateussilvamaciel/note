@@ -1,0 +1,310 @@
+Nas instacias Linux aws uso : “sudo su” para acessar o root
+Alt f1- primeiro terminar
+Alt f2 – segundo terminar
+
+Comando Linux:
+~ diritorio home
+cat: comando para visualizar o arquivo
+pwd: show diretory now
+su - : super use, passar para o usuario root
+$: usuario comun
+#: super user
+
+----------------------------------------------------
+
+cd - : volta para o ultimo direto
+cd ~ : volta para o home
+ls -lha : L detalher sobre arquivos H tamanho arquivo A mostrar todos arquivos
+CRTL + L: limpar tela
+history: historico de comandos usados
+cd ..: voltar diretório
+CTRL + d: sair do shell
+Shif + page up/ page down
+ls – lha | more : para sair aperta q
+df -h: mostrar as partições
+echo: imprimi um text 
+shutdown -h now
+poweroff
+reboot
+init 0 (desliga) / init 6 (renicia)
+alias: usado para apelidar um comando exemplo ls =’ls -l’ assim se eu digitar ls vai rodar o comando ls -l em vez de somente ls.
+Which: verifica se o camando está instalado na sua máquina exemplo which ls
+Type: verifica se o comando está sendo executado interno ou externamente.
+touch: cria um arquivo vazio 
+touch teste3
+ls: lista arquivos do diretórios.
+ls -a : lista os arquivos e diretórios ocultos.
+ls -A: lista os arquivos não os diretórios
+ls -B: Não lista os arquivos que termina com ~, que são arquivos de backup.
+ls –color=auto
+ls –color=always
+ls –color=never
+ls -l: detalhamento do que está na pasta
+ls- lG: Oculta os grupos dos arquivos
+ls -lo: lista somente o dono
+ls -d: Lista somente o nome do diretorio
+ls -f: não classifica listagem
+ls -t: classifica por data da criação (r para reverter a listagem)
+ls -lac: ultiliza o c time 
+ls -laX: classifica pela extensão (r para reverter a listagem)
+ls -laR: lista todos os arquivos de forma recursiva
+
+cd: change directory
+pwd: show current directory 
+mkdir: criar diretorios
+mkdir -p: cria diretorios dentro de diretórios
+tree: mostra diretórios em forma de arvore
+rmdir: remove diretórios
+rmdir -p: removendo diretórios vazio
+
+cat: visualizar o conteúdo de arquivos de texto
+cat -n: mostrar número da linha
+cat -s: esconde as linhas em branco
+cat -b: Linha com conteúdo
+cat “no nome do arquivo”
+
+rm: remove arquivos ou diretórios
+rm -r: remove recursive
+rm -rf: remove os arquivos de maneira recursiva e forçado
+rm -rf *: remover todos arquivos que estão no meu diretorio
+rm -f a*: todos os arquivos começados com a
+
+cp: copiar arquivos Linux
+syntax: cp [origem] [destino]
+cp  -fr *
+cp -R recursive 
+cp -vfu * dir/ : faz a copia somente dos arquivos que tem data de alteração mais novo que o destino
+cp -x : copia arquivos que estão em outro sistema de repartição
+cp -p: preservar atributos do arquivo
+cp -a: = dpR 
+
+mv: mover arquivos, apagando da origem. Tipo um Ctrl + x(serve para renomear tmb)
+mv -i: modo interativo 
+mv -v: ver os arquivos movidos
+mv -u: move arquivos mais novos o com a mesma data de modificação
+
+Editores Vi | nano | mcedit
+:qi
+e-edição
+esc
+:x salva e sai do editor
+:w gravar
+
+Curingas
+* : Um, nenhum ou mais de um caracter
+ls a*: lista todos os arquivos que começam com a
+ls *path: lista todos que termina com path
+ls a*z: lista todos os arquivos que começam com a e termina com z
+?: um caracter
+ls m?: lista todos os arquivos que tem um caractere na segunda posição
+ls m??
+[a-z]: delimitar uma faixa de caractere
+ls m[a-c]
+^negação
+ls m[^s-t]
+{as}: 
+ls x{zd,ze}*
+
+clear: limpar tela
+Ctrl + l
+date: configurar data/ converte/ mostrar
+hwclock –systohc: para salvar o data e hora
+date +%d-%m-%y
+df: espaço livre em cada partição
+df -h: mais humano
+df -H
+df -l: locais
+ln: cria um link para diretórios o arquivos
+ls /bin/ls ls
+du:
+find: encontrar arquivos que estão no mesmo diretorio
+find . -name ls                                        
+ 
+free: 
+free –kilo
+free –mega
+free –kibi
+free –mebi
+free –gibi
+free –giga
+free --mega -s 1
+------------------------------------------------------------------------------------------------------------------------------grep: Pesquisa por expresses por um determinado crivo
+grep -v
+grep -f
+head: mostra as primeiras linha do arquivo 10 por padrão
+head -n “numero de linhas”
+nl: numera quantas linha tem um arquivo
+------------------------------------------------------------------------------------------------------------------------------more: mostra tudo
+Enter pula linha
+Space pula pagina
+------------------------------------------------------------------------------------------------------------------------------less: Mostra o arquivo completo
+less etc/ssh/sshd_config
+usa setas de navegação
+pode presquisar com
+/”palavra”
+M -> proxima ocorrencia
+Q -> para sair
+------------------------------------------------------------------------------------------------------------------------------sort: coloca em ordem um lista
+Cat lista.txt | sort
+Sort -r inverte
+Sort -n numérica
+Sort list.txt -c: vai retornar se está ordenada ou não
++1 segunda coluna0
+-k delimitador 
+Cat /etc/passwd | sort -t “:” -k 1(primeira coluna) 2 (segunda coluna) 
+------------------------------------------------------------------------------------------------------------------------------tail: visualizar o final do arquivo no terminal
+Tail /etc/passwd 
+Tail -n 5 /etc/passwd
+Tail -f: ver modificações nos arquivos
+Tail -f /var/log/auth.log
+------------------------------------------------------------------------------------------------------------------------------time: permite que vc veja o tempo de execução de um comando
+Time ls
+Time find / -name “nome”
+------------------------------------------------------------------------------------------------------------------------------touch: permite criar o arquivo vazio
+Touch /tmp/arquivo
+Touch -t 10120815: modificando a hora que foi criado
+------------------------------------------------------------------------------------------------------------------------------uptime: mostra o tempo de atividade da máquina desde do último boot
+------------------------------------------------------------------------------------------------------------------------------
+dmesg: ultimas mensagem do kernel
+-w fica mostando
+-x nível de prioridade 
+-T times temp para data e hora legível
+-c limpa as mensagem do buffer do kernel
+------------------------------------------------------------------------------------------------------------------------------
+Mesg: permitir o não receber o talk
+Echo: emitir uma mensagem na tela
+-n não faz quebra de linha
+-e habilita a interpretação de caracteres especiais.
+------------------------------------------------------------------------------------------------------------------------------sudo: escala privilégios para usuários
+Sudo su
+------------------------------------------------------------------------------------------------------------------------------sync: permite gravar os buffers do kernel no disco
+Uname: retorna o nome do sistema operacional
+Uname -a -s -n -r -v -m
+------------------------------------------------------------------------------------------------------------------------------reboot: precisa ser executado como root e serve para reiniciar a machine
+Systemctl reboot
+reboot -f: força na marra
+shuntdown -r now
+echo b>/proc/
+halt: desligar a machine
+systemctl halt: desligar
+shutdown -h now
+echo o > /proc/sysrq-trigger: desligar como ultimo recurso
+shutdown -h 09:40
+shutdown -c: cancela os agendamentos de desligamentos
+wc: conta o numero de palavras, bits  e tamanho
+------------------------------------------------------------------------------------------------------------------------------seq: cria uma sequência de números 
+------------------------------------------------------------------------------------------------------------------------------chattr: permite alterar atributos de um sistemas de arquivos
+Cut: permite que corte o arquivo, visualizando somente uma parte
+cut -d “:” -f  1 /etc/passwd
+cut -d “:” -f 1-7 /etc/passwd
+------------------------------------------------------------------------------------------------------------------------------cmp: comparar arquivos
+cmp teste teste-copia
+diff: mostra as diferenças de dois arquivos, siada mais humana
+diff -u teste teste-copia
+diff -r : compara diretórios
+
+whereis: permite encontrar o diretório que tem a manual do arquivo procurado
+which: permite localizar onde o binário se encontra 
+which ls
+
+
+ 
+Começa com d de diretório
+Começa com l é de link simbólico
+Começa com – é um arquivo
+Começa com b é dispositivo de bloco
+Começa com C é dispositivo de caractere 
+tty -> terminal 
+
+TAB – completa o comando
+
+Diretório e arquivos
+Caminho absoluto cd /home/admin
+Caminho relativo dentro do diretório home uso cd admin para ir para o admin
+
+LSB – Linux Standart Basic
+FHS – 
+/bin - Binários de usuários, essenciais no boot
+/sbin - Binários do superusuário, essenciais no boot
+/boot - Arquivo do gerenciador de partida e kernel, símbolos
+/dev - Dispositivos do sistema
+/etc - Arquivos de configuração globais
+ /etc/opt - Arquivos de configuração para aplicativos em /opt
+ /etc/X11 - Arquivos de configuração para o X Window System 11
+/home - Armazenamento de dados de contas de usuários normais
+/root - Armazenamento de dados de contas do superusuário
+/lib - Bibliotecas essenciais do sistema, de binários localizados em /bin e /sbin
+/mnt - Sistema de arquivos montado temporariamente
+/media - Ponto de montagem de mídias removíveis (como pen-drives, cd-rom)
+/opt - Pacotes estático de aplicações
+/proc - systema de arquivos virtual, onde pode fazer a interação com o kernel
+     e processos do sistema
+/tmp - Arquivos temporários. Conteúdo geralmente apagado no reboot nas distribuições
+/usr - (unix system resources) - Hierarquia secundária (não essenciais no boot) para dados compartilhados de usuários
+  /usr/bin - O mesmo que a hierarquia /bin, mas contém binários não essenciais ao
+  funcionamento da máquina ou para o recovery
+  /usr/include - Diretório padrãod para headers
+  /usr/lib - O mesmo que a hierarquia /lib, mas não essenciais ao boot
+  /usr/sbin - O emsmo que o /sbin, mas não essenciais ao boot da máquina
+  /usr/share - Dados compartilhados independentes de arquitetura
+  /usr/src - Armazenamento de código fonte da máquina
+  /usr/X11R6 - - X Window Sysem, versão 11R6
+  /usr/local - Armazenamento de binários não distribuidos na instalação principal
+         da máquina, ou seja, fora do sistema de empacotamento. Também é o local
+         de armazenamento terciário de dados
+/var - Arquivos que são gravados comf requencia (logs, páginas web, email, imagens, etc)
+  /var/lock - Arquivos de lock, usados para controlar corretamente os recursos em uso
+  /var/log - Arquivos de log, usado para logs em geral
+  /var/mail - Caixas de e-mail dos usuários do sistema em formato mailbox
+  /var/run - Contém dados sobre a execução do sistema desde seu primeiro boot 
+          (daemons e usuários)
+  /var/spool - Spooling de tarefas (fila de impressão, cache de pacotes, proxy, etc)
+  /var/spool/mail - Antigo local da caixa de correio de usuários (deve ser usado /var/mail)
+  /var/tmp - Arquivos temporários. Quando usado em modo multi-usuário.
+Execução de comandos internamente
+“sleep 10”
+“kill %3” matar programa
+“ls ; tree; slepp 1”
+“ls ; echo “segundo comando”; echo “Terceiro comando” ; sleep 3” 
+ps processos em execução no terminal 
+ps -a
+ps -axf
+ps -axe
+pidof cron
+pidof sshd
+pstree: arvore de processos
+-h -p -H
+Kill -9 1847
+-9 foraçado
+-15 amigavel
+pgrep -u root sshd
+pkill -u 
+killall: mata processo pelo nome
+killall5: mata todos os processos
+nohup sleep 200&
+vmstart
+
+multiplexadores de terminas
+screen
+tmux
+fdisk: Sistema de particionados de discos do Linux
+fdisk /dev/das
+fdisk -l /dev/xvda
+sdf
+wipefs: apaga todos os dados das partições
+wipefs -a /dev/xvdf
+
+df -hT: Visualizar os volumes formatados e montados
+lsblk: Visualizar todos os volumes que foram mapeados na inicialização, mas não formatados e montados
+sudo mkfs -t xfs /dev/nvme1n1
+sudo mkdir /data
+sudo mount /dev/nvme1n1 /data
+du -hs: checar a ocupação
+mklost+found: encontrado e perdidos, arquivos que se perderam ou tiveram algum problema
+
+------------------------------------------------------------------------------------------------------------------------------Pegar uma partição de 10 gb, e formatar
+- mkfs.ext4 /dev/sda6
+montar uma partição para se tornar acessível
+- mkdir /tmp/mount_var
+- mount /dev/”origem” /tmp/mount_var
+- cp -a /var/* /tmp/mount_var 
