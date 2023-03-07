@@ -11,3 +11,7 @@ git push -u origin main
 git remote add origin https://github.com/mateussilvamaciel/note.git
 git branch -M main
 git push -u origin main
+
+Criar nova branch:
+git branch namebranch
+Obs: Nome da branch tem que descrever a função dela
