@@ -17,9 +17,5 @@ git branch namebranch
 Obs: Nome da branch tem que descrever a função dela
 
 Mudar de branch
-<<<<<<< HEAD
 git checkout branchdestination
 Obs: so coseguir trocar para branch master quando o arquivo alterado foi commitado
-=======
-git checkout branchdestination
->>>>>>> 7bb1888b9278053a1cbdfde5deb99c778e593992
