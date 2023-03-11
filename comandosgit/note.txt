@@ -11,11 +11,13 @@ git push -u origin main
 git remote add origin https://github.com/mateussilvamaciel/note.git
 git branch -M main
 git push -u origin main
-
-Criar nova branch:
-git branch namebranch
+------------------------------------------------------------------------------
+git branch namebranch -> create bew branch
 Obs: Nome da branch tem que descrever a função dela
 
-Mudar de branch
-git checkout branchdestination
+git checkout branchdestination ->Change branch
 Obs: so coseguir trocar para branch master quando o arquivo alterado foi commitado
+
+git branch -> Show branchs local
+
+git merge master/main -> Da branch que você está ela pega as alterações da main/master e tras pra a branch utilizada. Tipo um pull quando você atualiza seu repositório local com o remoto. Mas neste cado vc atualiza sua branch com a principal. para executar esse comando você precisa está na branch destino
